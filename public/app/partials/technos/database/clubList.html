@@ -1,0 +1,63 @@
+<div class="panel-clubList" ng-controller="clubCtrl">
+	<div ng-include src="'assets/app/partials/authenticate.html'"></div>
+	<div ng-show="userconnected">		
+		<div class="train-database">
+			<a href="#/technos?rub=database/championnatList">Championnats</a> > Clubs
+		</div>
+		<div class="alert alert-success" ng-hide="messageSuppression == null">
+			<button type="button" class="close" data-dismiss="alert">&times;</button>
+			{{messageSuppression}}
+		</div>
+		<div id="pagination" class="pagination">
+			<span class="prev" ng-click='pageDown()'><a ng-class="{disabled: clubs.page.page == 0}">&larr; Précédent</a></span>
+			<span class="current"><a>[ Affichage de	{{clubs.page.elementDebutPage}} à {{clubs.page.elementFinPage}} sur	{{clubs.page.nombre}} ]</a></span>		
+			<span class="next"	ng-click='pageUp()'><a ng-class="{disabled: clubs.page.page == clubs.page.nbPage -1}">Suivant &rarr;</a></span>
+		</div>		
+		<table class="table table-striped table-responsive swipe-horizontal">
+			<thead>
+				<tr>
+					<th class=""><a href="" ng-click="sort('nom')">{{championnat}}</a>
+						<input type="search" id="searchboxNom" name="f" value="" autocomplete="off"
+						placeholder="Filtre" ng-model="searchboxNom" ng-change='searchNom()'>
+					</th>
+					<th class="column-nom-complet"></th>
+					<th class="column-premiere-saison">Première saison</th>
+					<th class="column-nombre-titres">Nombre de titres</th>
+					<th class="column-creation">Fondation</th>
+					<th class="column-couleurs">Couleurs</th>
+					<th class="column-noms">Nom complet</th>
+					<th class="column-surnoms">Surnoms</th>
+					<th class="column-siege">Siège</th>
+					<th class="column-site">Site officiel</th>
+					<th class=""><a href=""></a></th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="club in clubs.liste"  class="ligne-database">
+					<td class="column-nom">
+						<img ng-show="club.logo" ng-src="getImage?c={{club.logo}}" class="logo-table" />
+					</td>
+					<td class="column-nom-complet">{{club.nom}}</td>
+					<td class="column-premiere-saison">{{club.premiereSaison}}</td>
+					<td class="column-nombre-titres">{{club.nombreTitres}}</td>
+					<td class="column-creation">{{club.fondation}}</td>
+					<td class="column-couleurs">{{club.couleurs}}</td>
+					<td class="column-noms"><span title="{{club.nomComplet}}">{{club.nomComplet|truncateText:25}}</span></td>
+					<td class="column-surnoms"><span title="{{club.surnoms}}">{{club.surnoms|truncateText:15}}</span></td>
+					<td class="column-siege"><span title="{{club.siege}}">{{club.siege|truncateText:15}}</span></td>
+					<td class="column-site"><span title="{{club.site}}"><a href="{{club.site}}" target="blank">{{club.site|truncateText:15}}</a></span></td>					
+					<td class="column-delete"><button ng-click="supprimer(club)" class="btn btn-danger">Supprimer</button>
+					</td>
+				</tr>
+			</tbody>
+			<tfoot ng-hide="clubs.page.nombre > 0">
+				<tr>
+					<td>
+						<span class="aucunResultTable">Aucun résultat</span>
+					</td>
+					<td></td><td></td><td></td>
+				</tr>
+			</tfoot>
+		</table>
+	</div>	
+</div>

@@ -1,0 +1,30 @@
+<div class="panel-technos-site">
+	<h2>Vue d'ensemble</h2>
+	<p>
+		Le schéma suivant montre une vue d'ensemble du fonctionnement et des technologies utilisées
+		pour ce site :
+	</p>
+	<img alt="Front end et Back end" src="assets/app/images/technos/front_back.jpg" />
+	<p>
+		Ce site internet utilise une architecture qui caractérise les sites internet modernes. C'est à dire qu'il fonctionne en "single page". Une seule page principale et un module en Javascript sont envoyés sur le client la 1ere fois.
+	</p>
+	<p>
+		Le module javascript va se charger, ensuite, de traiter les actions de l'utilisateur 
+		(afficher une rubrique par exemple) et de communiquer avec le serveur (récupérer, par exemple, une liste d'informations) et enfin, de mettre à jour l'affichage.
+	</p>
+	<p>
+		Il n'y a plus, dans cette architecture, de demande et d'affichage de page entière. Ce ne sont que des mises à jour d'une partie de l'affichage. Vous ne verrez donc pas d'effet de rechargement de pages.
+	</p>	
+	<h2>Côté client (Front End)</h2>
+	<p>La partie cliente qui s'exécute et est interprétée par le client (le navigateur du PC) est présentée par le schéma suivant : </p>
+	<img alt="Front end" src="assets/app/images/technos/frontend.jpg" />
+	<p>Le module javascript utilisé est le très populaire framework proposé par Google: AngularJS. Ce framework permet de structurer correctement le javascript en une application robuste. Il permet d'utiliser le pattern MVC (Modele Vue Controleur).</p>
+	<h2>Côté serveur (Back End)</h2>
+	<p>Ce dernier schéma présente la manière dont le système côté serveur est architecturé : </p>
+	<img alt="Back end" src="assets/app/images/technos/backend.jpg" />
+	<p>Sur le serveur, c'est le framework Play! qui est utilisé. Ce framework permet de développer des applications en Java ou en Scala. Il est connu pour être rapide et extrêmement productif.</p>
+	<p>Pour ce site, Play ne génère aucune page HTML, il s'occupe de transmettre au client les fichiers statiques, le module Angularjs et le CSS dans un premier temps. Dans un second temps, les requêtes provenant du client, sont dirigées vers un controleur défini. Celui-ci traite la requête et va construire la réponse. Pour cela, il peut si nécessaire effectuer des requêtes à la base de données en utilisant des objets "modèles de données". Avec ou sans données provenant de la base, le controleur restitue une réponse au format JSON. En fait, le serveur Play! est utilisé ici comme serveur REST.</p>
+	<p>Il répond aux requêtes HTTP avec une URL unique permettant d'effectuer des opérations: lecture, écriture, modification, suppression.</p>
+	<p>La première demande du client (adresse du navigateur = http://www.yannick-saintmartino.com) se matérialise par le transfert du serveur vers le client de la page principale en HTML, du CSS pour le style et du module javascript en AngularJS. Le navigateur exécute le javascript et interprète le HTML et CSS et affiche la page dans la fenêtre du navigateur.</p>
+	<p></p>
+</div>

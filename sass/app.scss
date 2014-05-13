@@ -1,0 +1,204 @@
+@import "commons/base";
+
+@import "specific/index";
+@import "specific/connaissances";
+@import "specific/parcours";
+@import "specific/websocket";
+@import "specific/technos";
+@import "specific/plan";
+
+html {
+	font-size: 62.5%;
+}
+
+body {
+	background-color: white;
+	color: white;
+	.tile {
+		background-color: white;
+		color: white;
+	}
+	
+	@include font-base;
+	font-family: $font-gotham;
+	font-size: 1.6rem;
+	line-height: 24px;
+	
+	.menu {
+		.bt-menu {
+			outline: none !important;
+			width: 50px;
+			text-align: center;
+			padding: 20px !important;
+		}  
+		
+		  min-height: 100px;
+		  width: 100%;
+		  margin-bottom: 80px;
+		  .tile {
+		  	height: 100px !important;
+		  	padding: 5px;
+		  }		  
+	}	  	
+	  .container { 
+		  /*@include susy-grid-background;*/
+		  @include container; 		  	
+		      
+		.content-logo {	
+		      	 text-align: center;
+		      	 font-size: 25px;		  	   	  	
+			  	 margin: 0 !important;
+				@include span-columns(1, 10);  
+		}  
+		
+		.container-view {
+			@include span-columns(9 omega, 10);
+		}
+			  		  	
+		.panel-presentation { 		  	 	
+		  	  				 				 
+		 }			   		
+	  }	
+	  
+	  button {
+	  	border-style: none;
+	  	padding-left: 20px;
+	  	padding-right: 20px;
+	  	padding-top: 10px;
+	  	padding-bottom: 10px;
+	  	cursor: pointer;
+	  	font-weight: bold;	  	
+	  }
+	   
+	  a {
+	  	cursor: pointer;
+	  } 
+	    
+	  	input, textarea {
+			margin-left: 12px;
+			margin-right: 5px;
+			padding: 5px;
+			border: none;
+		}  
+		
+		.table td {
+			vertical-align: middle !important;
+		}
+		
+		table {
+			th {
+				font-weight: bold !important;
+			}
+			
+			.logo-table {
+				max-width: 60px;
+				max-height: 60px;	
+			}
+			
+			.column-nom {
+				text-align: center;
+			}		
+		}
+		
+	.pan-center-img {
+		width: 100%;
+		text-align: center;
+	}	
+}
+
+
+.body-blue { 
+	@include body-cv-config($cv-bg-blue, $orange,$white);
+	@include plan-cv-config($cv-bg-blue);
+}
+
+.body-green { 
+	@include body-cv-config($cv-bg-green, $yellow, $white); 
+	@include plan-cv-config($cv-bg-green);
+}
+
+.body-yellow { 
+	@include body-cv-config($cv-bg-yellow, $blueDark, $white); 
+	@include plan-cv-config($cv-bg-yellow);
+}
+
+
+/* Responsive */
+@media (min-width: 992px) {
+	.menu {
+			.tile {
+				.icon-menu {
+					visibility: hidden;
+					display:none;
+				}
+			}
+
+			.bt-menu {
+				background-color: transparent !important;
+			}
+	}	
+}
+
+@media (max-width: 992px) {
+	body {	
+
+		.menu {
+			margin: 0 !important;			
+		}
+
+		.menu-visible {
+			background-color: #03304A;
+			box-shadow: 0 10px 30px black;
+			z-index: 200000;
+			height: 5000px;
+		}
+
+		.menu {
+			top: 0;
+			left: 0;
+			width: 70% !important;				
+			position: fixed;			
+				.tile {
+					height: 50px !important;
+					width: 100%;
+					padding: 0 !important;
+					text-align: left;
+					margin: 0;
+					outline: none !important;
+
+					.icon-menu {
+						width: 50%;
+						text-align: center;
+					}
+
+				}	
+				.bt-menu {
+					padding-left: 0 !important;
+					padding-right: 0 !important;
+					padding-bottom: 0 !important;
+					margin: 0 !important;
+					width: 100%;
+					text-align: center;
+					max-height: 30px !important;
+					border: 0px !important;
+					box-shadow: 0 10px 30px black;
+				}
+			}	 
+		.container { 
+			padding-top: 100px;
+				.content-logo {	
+					width: 100% !important;
+					margin-top: 15px !important;
+					margin-bottom: 15px !important;
+				}
+			
+				.container-view {
+					width: 100% !important;
+				}
+				
+				.panel-presentation {
+			 		padding: 0px !important;	
+			 	}				
+		  }	
+	}
+}

@@ -1,0 +1,43 @@
+# Routes
+
+# Home page
+GET     /   					    controllers.Assets.at(path="/public", file="index.html")
+
+GET		/infosGenerales				controllers.Application.getInformationsGenerales()
+GET		/actualites					controllers.Application.getActualites()
+GET		/connaissances				controllers.Application.getConnaissances()
+GET		/experiences				controllers.Application.getExperiences()
+GET		/emplois					controllers.Application.getEmplois()
+GET		/formations					controllers.Application.getFormations()
+GET     /informations				controllers.Application.informations(type:String, element:Int)
+
+GET		/connexion					controllers.AuthentificationController.connexion()
+GET 	/deconnexion				controllers.AuthentificationController.deconnexion()
+GET		/getConnexion				controllers.AuthentificationController.getConnexion()
+
+GET     /championnats		        controllers.ChampionnatController.listChampionnat(p:Int ?= 0, s ?= "nom", o ?= "asc", filtreNom ?= "", filtrePays ?= "")
+GET		/championnat				controllers.ChampionnatController.getChampionnat(id:Long)
+POST    /championnat		        controllers.ChampionnatController.nouveauChampionnat()
+DELETE  /championnat				controllers.ChampionnatController.supprimerChampionnat(championnatId:Long)
+
+GET     /club                       controllers.ClubController.listClub(p:Int ?= 0, s ?= "nom", o ?= "asc", filtreNom ?= "", championnat:Long)
+POST    /club		                controllers.ClubController.nouveauClub()
+DELETE  /club						controllers.ClubController.supprimerClub(clubId:Long)
+
+
+GET     /websocket	            	controllers.Websocket.newSession()
+GET     /connectSession				controllers.Websocket.connectSession(sessionID: String)
+GET     /chat              			controllers.Websocket.chat(sessionID: String)
+GET     /qrCode		            	controllers.Websocket.qrCode(idWebsocketSession:String)
+
+GET     /latexcv					controllers.CvController.getLatexCv()
+
+
+#Image
+GET    /getImage					controllers.ImageController.getImage(c:Integer ?= 0)
+
+
+# Map static resources from the /public folder to the /assets URL path
+
+GET     /assets/*file           					    controllers.Assets.at(path="/public", file)
+GET     /*file			           					    controllers.Assets.at(path="/public", file)

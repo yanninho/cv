@@ -1,0 +1,67 @@
+.panel-index {
+	.panel-text-presentation, .panel-informations {
+		margin-bottom: 50px;
+	}
+	
+	.panel-informations {
+		.date-actu {
+			font-weight: bold;
+			margin-right: 8px;
+		}	
+	}
+	
+	.panel-resume {
+		@include span-columns(4, 9);
+		
+		.content {
+			width: 650px;
+		}
+		
+	}
+	
+	.panel-diapos {
+		@include span-columns(5 omega, 9);
+		position:relative;
+    	overflow:hidden;
+		height: 330px;		
+		
+		.panel-diapo-img {
+			width: 500px;
+			height: 330px;
+		}
+		.panel-diapo-1 {
+			background-image: url("../images/presentation/diapo_1.png");
+		}
+		.panel-diapo-2 {
+			background-image: url("../images/presentation/diapo_2.png");
+		}
+		.panel-diapo-3 {
+			background-image: url("../images/presentation/diapo_3.png");
+		}
+		.panel-diapo-4 {
+			background-image: url("../images/presentation/diapo_4.png");
+		}
+		.panel-diapo-5 {
+			background-image: url("../images/presentation/diapo_5.png");
+		}
+	}
+}
+
+
+/* responsive */
+@media screen and (max-width: 992px) {
+	.panel-index {
+		.panel-resume {
+			width: 100%;
+			.content {
+				width: 100%;
+			}
+		}
+
+		.panel-diapos {
+			width: 100%;
+			margin-top: 30px;
+		}
+
+	}
+}

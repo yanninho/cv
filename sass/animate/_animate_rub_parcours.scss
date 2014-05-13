@@ -1,0 +1,32 @@
+/* Durée de l'animation */
+ .tile-parcours-sub.ng-enter, .tile-parcours-sub.ng-leave {
+   transition: opacity 1s, height linear 1s;  
+   /* position:absolute;   */
+} 
+ 
+/* Au démarage */
+ .tile-parcours-sub.ng-enter {
+  opacity: 0;
+  height: 0 !important;
+} 
+ 
+/* Fin de l'animation d'entrée */
+ .tile-parcours-sub.ng-enter.ng-enter-active {
+   opacity: 1; 
+   height: 50px !important; 
+} 
+ 
+/* Fin de l'animation de sortie */
+ .tile-parcours-sub.ng-leave.ng-leave-active {
+   opacity: 0;  
+   height: 0 !important; 
+} 
+
+.tile-parcours-sub.ng-leave {
+	/* height: 0 !important;	
+	padding: 0 !important;
+	margin: 0 !important;
+	visibility: hidden;
+	display: none;
+	position: absolute; */
+}

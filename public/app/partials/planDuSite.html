@@ -1,0 +1,28 @@
+<div class="planDuSite">
+	<h1>Plan du site</h1>
+	
+	<section name="Accueil">
+		<h2><a href="#/">Accueil</a></h2>
+		<h3><a href="assets/app/cv/Yannick_SaintMartino.pdf">cv au format pdf</a></h3>
+	</section>
+	<section name="connaissances">
+		<h2><a href="#/connaissances">Connaissances</a></h2>
+	</section>
+	<section name="Parcours">
+		<h2><a href="#/parcours">Parcours</a></h2>
+		<h3><a href="#/parcours?rub=pro">Professionnels</a></h3>
+		<h4 ng-repeat="emploi in emplois">
+			<a href="#/parcours?rub=pro&emploiId={{emploi.id}}">{{emploi.nom}}</a>
+		</h4>
+		<h3><a href="#/parcours?rub=form">Formations</a></h3>
+		<h4 ng-repeat="formation in formations">
+			<a href="#/parcours?rub=form&formationId={{formation.id}}">{{formation.titre}}</a>
+		</h4>
+	</section>
+	<section name="coinsTechnos">
+		<h2><a href="#/technos">Coin Techno</a></h2>
+		<h3><a href="#/technos?rub=site">Comment est fait ce site ?</a></h3>
+		<h3><a href="#/technos?rub=websocket">Websocket</a></h3>
+		<h3><a href="#/technos?rub=bdd">Exemple de base de données</a></h3>
+	</section>
+</div>

@@ -1,0 +1,37 @@
+	<div class="panel-websocket" ng-controller="websocketCtrl">
+		<div class="pan-information-techno-texte">	
+				<p>
+					<strong>Websocket</strong> est un nouveau protocole réseau qui fait partie de la spécification <strong>HTML5</strong>. 
+					Très récent, il fait beaucoup parler de lui car c'est un nouveau système permettant 
+					la communication entre client et serveur en mode push ou notifications. 
+					C'est à dire que le client peut recevoir des messages sans en avoir fait explicitement la demande.
+				</p>
+				<p>
+					A terme, tous les navigateurs implémenteront complètement les websockets. L'exemple présenté ici a été testé avec Firefox sur PC et smartphone.
+				</p>
+				<p>
+					Vous pouvez retrouver beaucoup d'articles sur internet parlant des websockets.
+				</p>	
+			<div class="etapeWS"><span class="badge">1</span><span class="glyphicon glyphicon-play"></span><a href="" ng-click="nouvelleSession()">Démarrer une session</a> : </div>
+			<div class="etapeWS"><span class="badge">2</span><span class="glyphicon glyphicon-play"></span> Utilisez le QRCode suivant sur une tablette ou un smartphone:
+				<div id="websocket-qrcode">
+					<img ng-hide="sessionID == null" ng-src="qrCode?idWebsocketSession={{sessionID}}" /> 
+				</div>
+			</div>		
+			<div class="etapeWS">
+				<span class="badge">3</span>
+				<span class="glyphicon glyphicon-play"></span> Ecrivez du texte:
+				<div>
+					<textarea ng-model="talk" ng-change="talkChange()" rows="6" cols="60"></textarea>		
+				</div>
+			</div>
+			<div class="etapeWS"><span class="badge">4</span><span class="glyphicon glyphicon-play"></span> Le texte est reçu par le serveur et poussé vers le client</div>
+			<div class="etapeWS"><span class="badge">5</span><span class="glyphicon glyphicon-play"></span> Le texte s'affiche sur la tablette ou le smartphone</div>
+		</div>	
+		<script type="text/javascript">
+		<!--
+			//appel socket	
+			   	
+		//-->
+		</script>
+ 	</div>

@@ -1,0 +1,170 @@
+// Color vars
+
+$white: #ffffff;
+$black: #000000;
+$blue: #2d89ef;
+$blueLight: #EFF4FF;
+$blueDark: #2B5797;
+$green: #00a300;
+$greenLight: #99b433;
+$greenDark: #1E7145;
+$red: #b91d47;
+$yellow: #ffc40d;
+$orange: #e3a21a;
+$orangeDark: #da532c;
+$pinkDark: #7E3878;
+$pink: #9f00a7;
+$purple: #603cba;
+$darken: #1d1d1d;
+$lighten: #d5e7ec;
+$grayDark: #525252;
+$magenta: #FF0097;
+$teal: #00ABA9;
+$redLight: #EE1111;
+
+
+$cv-bg-blue : #043D5D;
+$cv-bg-green : #68C39F;
+$cv-bg-yellow : #F8C119;
+$cv-bg-red : #E6353A;
+$cv-bg-orange : #F47723;
+$cv-bg-light-blue: #449BB5; 
+
+@mixin bt-cv-config($bgcolor, $ftcolor) {
+	$font-color : $ftcolor;
+	$bg-color : $bgcolor;
+	$border-color : shade($bgcolor, $vingtpourcent);
+	$border-highlight-color : shade($bgcolor, $quarantepourcent);
+	@include button-colors($font-color, $bg-color, $border-color, $border-highlight-color);
+	$bg-color-hover : shade($bgcolor, $soixantepourcent);
+	$border-color-hover : shade($bgcolor, $soixantepourcent);
+	$border-highlight-color : shade($bgcolor, $soixantedixpourcent);
+	@include button-hover-colors($font-color, $bg-color-hover, $border-color-hover, $border-highlight-color);
+}
+
+@mixin link-cv-config($link-color) {
+	$hover : tint($link-color, $vingtpourcent);
+	$active : shade($link-color, $vingtpourcent);
+	$visited : tint($link-color, $quarantepourcent);
+	$focus : shade($link-color, $quarantepourcent);
+	@include link-colors($link-color,$hover, $active, $visited, $focus);
+}
+
+@mixin link-disabled-cv-config($link-color) {
+	cursor: default;
+	$default-color: shade($link-color, $cinquantepourcent);
+	$hover : shade($link-color, $cinquantepourcent);
+	$active : shade($link-color, $cinquantepourcent);
+	$visited : shade($link-color, $cinquantepourcent);
+	$focus : shade($link-color, $cinquantepourcent);
+	@include link-colors($default-color,$hover, $active, $visited, $focus);
+}
+
+@mixin tile-cv($bg-color) {
+	color: tint($bg-color, $quatrevingtpourcent) !important;
+	$div-color: shade($bg-color, $vingtpourcent);
+	background-color: $div-color;
+	&:hover {
+		$tile-hover-outline : tint($bg-color, $soixantedixpourcent);
+		outline: 3px $tile-hover-outline solid;	
+	}
+}
+
+@mixin tile-cv-bordered($bg-color) {
+	$bgcolor: tint($bg-color, $soixantedixpourcent);
+	/* background-color: tint($bg-color, $soixantedixpourcent); */
+	background-color: $bg-color;
+	color: $bgcolor !important;
+	border: 5px solid $bgcolor !important;
+	
+	&:hover {
+		$tile-hover-back : tint($bg-color, $dixpourcent);
+		background-color: $tile-hover-back ;	
+	}
+}
+
+@mixin tile-cv-inversed($bg-color) {
+	$bgcolor: tint($bg-color, $soixantedixpourcent);
+	background-color: $bgcolor;
+	color: $bg-color !important;
+	border: 5px solid $bgcolor !important;
+	&:hover {
+		$bgcolorsombre : tint($bg-color, $quarantepourcent);
+		background-color: $bgcolorsombre;
+	}
+}
+
+
+@mixin body-cv-config($bg-color, $lg-color,$lg-font-color) {
+	background-color: $bg-color;	
+	$fg-color : tint($bg-color, $quatrevingtpourcent);
+	color: $fg-color;
+		.menu { 
+			.tile {
+				@include tile-cv($bg-color);	
+				@media (max-width: 992px) {
+					border-top: 1px solid tint($bg-color, $quatrevingtpourcent);
+					padding-top: 10px !important;
+				}
+	    	}
+	    	@media (max-width: 992px) {
+		    	a:hover {
+		    		background-color: tint($bg-color, $quatrevingtpourcent);
+		    		span {
+		    			color: $bg-color;
+		    		}
+		    	}
+
+		    	.actif {
+		    		span {
+		    			color : $lg-color !important;
+		    			font-weight: bold;
+		    		}
+
+		    	}
+	    	}
+		}
+		.tile-bordered {
+			@include tile-cv-bordered($bg-color);	
+		}	
+		.tile-inversed {
+			@include tile-cv-inversed($bg-color);	
+		}
+		
+		.tile-cv-bordered-active {
+			background-color: shade($bg-color, $vingtpourcent);
+		}
+		
+		.panel-techniques, .panel-enseignement {			
+			background-color: shade($bg-color, $vingtpourcent);	
+		}	
+		
+		.panel-img {
+			background-color: tint($bg-color, $soixantedixpourcent);
+		}
+		
+		input, textarea {
+			color: $fg-color;
+			background-color: shade($bg-color, $vingtpourcent);
+		}
+
+		button {
+			@include bt-cv-config($lg-color,$lg-font-color);
+		}
+		a {
+			@include link-cv-config($lg-color);
+		}
+		
+		.disabled {
+			@include link-disabled-cv-config($lg-color);
+		}
+		
+		pre {
+			background-color: shade($bg-color, $cinquantepourcent);
+			color: $fg-color;
+			border: 1px solid $fg-color;
+		}
+		
+		
+		@include table($bg-color,$lg-color,$lg-font-color);
+}

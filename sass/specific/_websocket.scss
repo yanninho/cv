@@ -1,0 +1,27 @@
+.panel-websocket {
+	.etapeWS {
+		margin-top: 20px;
+		margin-bottom: 20px;
+	}
+	
+	#websocket-logo {
+		width: 100%;
+		text-align: center;
+		
+		#websocket-img {
+			  width: 130px;
+			  height: 177px;
+			  background-repeat:no-repeat;
+			  background-size: 100% 100%;
+			  margin-left: auto;
+			  margin-right: auto;
+			  background-image: url("/assets/app/images/html.png");
+		}
+	}
+	
+	#websocket-qrcode {
+		margin-top: 25px;
+		margin-left: 25px;
+		margin-bottom: 25px;
+	}	
+}

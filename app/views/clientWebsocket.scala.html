@@ -1,0 +1,49 @@
+@(sessionID: String)
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<title>Yannick Saint Martino - Websocket</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1.0" />
+	<meta charset="utf-8">
+	<script type="text/javascript" src="@routes.Assets.at("app/lib/jquery/jquery-1.9.0.min.js")"></script>
+</head>
+<body>
+	<p>
+		Connecté à la session: <strong>@sessionID</strong>
+	</p>
+	<div id="onChat">
+		<div id="messages"></div>
+	</div>
+	<script type="text/javascript">
+	<!--
+		//appel socket	
+		    var WS = window['MozWebSocket'] ? MozWebSocket : WebSocket
+		    var chatSocket = new WS("@routes.Websocket.chat(sessionID).webSocketURL(request)")
+            
+            var receiveEvent = function(event) {
+            	
+                var data = JSON.parse(event.data)
+                
+                // Handle errors
+                if(data.error) {
+                    chatSocket.close()
+                    $("#onError span").text(data.error)
+                    $("#onError").show()
+                    return
+                } else {
+                    $("#onChat").show()
+                }
+                
+                // Create the message element
+                $('.message').remove()
+                var el = $('<div class="message"><p></p></div>')
+                $("p", el).text(data.message)
+                $(el).addClass(data.kind)                
+                $('#messages').append(el)
+            }
+            chatSocket.onmessage = receiveEvent	          
+
+	//-->
+</script>
+</body>
+</html>

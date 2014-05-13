@@ -1,0 +1,20 @@
+@media (min-width: 992px) {
+	.animate-show {
+		-webkit-transition: opacity 0.5s, transform 0.5s;
+		transition: opacity 0.5s, transform 0.5s;
+		opacity: 1;	
+	}
+
+	.animate-show.ng-hide-add,.animate-show.ng-hide-remove {
+		display: block !important;
+	}
+
+	.animate-show.ng-hide {
+			opacity: 0;
+	}
+
+	.animate-show.ng-hide {
+		transform: translateY(-100px);
+	}
+}
+

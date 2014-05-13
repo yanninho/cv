@@ -1,0 +1,42 @@
+<div class="panel-index">
+	<div class="content-text">
+		<div class="panel-text-presentation">
+			<h1>Bonjour et bienvenue,</h1>
+			<p>Je suis Yannick Saint Martino et ceci est mon cv en ligne.</p>
+			<p>C'est surtout <a href="#/technos">un laboratoire</a> afin d'approfondir mes connaissances des
+				technologies de développement web.
+			</p>
+			<p>J'utilise les dernières techniques, c'est pourquoi je vous conseille d'utiliser, si possible, les versions les plus récentes des navigateurs.</p>
+		</div>		
+		<div class="panel-informations">
+			<h2>Actus récentes..</h2>
+			<p ng-repeat="actualite in actualites" class="ligne-database">
+				<span class="date-actu">[{{actualite.creation|date:'dd/MM/yyyy
+					HH:mm:ss'}}]</span> <span class="texte-actu" ng-bind-html="actualite.texteCourt"></span>
+			</p>
+		</div>
+		<div class="panel-resume">
+			<div class="content">
+				<h2>En bref..</h2>
+				<p>J'ai {{informationsGenerales.age}} ans, et je suis originaire de Perpignan (Pyrénées-Orientales).</p>
+				<p>J'ai étudié en BTS Informatique à Perpignan, DUT et Licence Professionnelle à Montpellier.</p>
+				<p>Je suis consultant informatique dans des sociétés de services à Toulouse depuis 7 ans : Sopra Group, S.I.I, Objet Direct (actuellement).</p>
+				<p>Pour des clients tels que E.D.F, France Télécom, Intel, et Natixis.</p>
+				<p>Essentiellement dans le domaine de la conception et du développement logiciel.</p>
+				<p>Les outils que j'utilise sont principalement autour de Java/JEE.</p>
+				<p>Actuellement, je m'intéresse aux framework Play!, Angularjs et SASS.</p>	
+				<p>J'ai un projet perso : développer le site <a href="http://www.quiprendlestickets.com" target="blank">www.quiprendlestickets.com</a>.</p>
+				<p>Et enfin, je prépare un voyage au Brésil, l'été prochain, pour aller voir la coupe du monde de football.</p>
+				<p>Mon cv au <a href="assets/app/cv/Yannick_SaintMartino.pdf">format PDF</a>. 
+				</p>	
+			</div>
+		</div>
+		<div class="panel-diapos" ng-switch on="diapospres">
+			<div class="panel-diapo-img panel-diapo-1 diapo" ng-switch-when="1"></div>
+			<div class="panel-diapo-img panel-diapo-2 diapo" ng-switch-when="2"></div>			
+			<div class="panel-diapo-img panel-diapo-3 diapo" ng-switch-when="3"></div>			
+			<div class="panel-diapo-img panel-diapo-4 diapo" ng-switch-when="4"></div>			
+			<div class="panel-diapo-img panel-diapo-5 diapo" ng-switch-when="5"></div>			
+		</div>
+	</div>
+</div>
