@@ -25,15 +25,14 @@ import play.mvc.Result;
 public class Application extends Controller {
 
 	public static Result launchCalls() {
-		long cinqMinutes = 300000;
+		long deuxMinutes = 120000;
 		java.util.Timer t = new java.util.Timer();
 		t.schedule(new TimerTask() {
 			@Override
 			public void run() {
 				Promise<WS.Response> quiprendlestickets = WS.url("http://www.quiprendlestickets.com/getModalites").get();
-				Promise<WS.Response> cv = WS.url("http://www.yannick-saintmartino.com/infosGenerales").get();
 			}
-		}, 0, cinqMinutes);	
+		}, 0, deuxMinutes);	
 		return ok("Demarrage des appels");
 	}
 
