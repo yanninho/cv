@@ -11,6 +11,8 @@ GET		/emplois					controllers.Application.getEmplois()
 GET		/formations					controllers.Application.getFormations()
 GET     /informations				controllers.Application.informations(type:String, element:Int)
 
+GET     /calls                      controllers.Application.launchCalls()
+
 GET		/connexion					controllers.AuthentificationController.connexion()
 GET 	/deconnexion				controllers.AuthentificationController.deconnexion()
 GET		/getConnexion				controllers.AuthentificationController.getConnexion()

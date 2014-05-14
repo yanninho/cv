@@ -3,8 +3,7 @@ package controllers;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.Comparator;
-import java.util.Collections;
+import java.util.TimerTask;
 
 import models.Actualites;
 import models.Emploi;
@@ -17,14 +16,28 @@ import models.TypeConnaissance;
 import org.codehaus.jackson.JsonNode;
 import org.codehaus.jackson.node.ObjectNode;
 
+import play.libs.F.Promise;
 import play.libs.Json;
+import play.libs.WS;
 import play.mvc.Controller;
 import play.mvc.Result;
 
 public class Application extends Controller {
 
+	public static Result launchCalls() {
+		long cinqMinutes = 300000;
+		java.util.Timer t = new java.util.Timer();
+		t.schedule(new TimerTask() {
+			@Override
+			public void run() {
+				Promise<WS.Response> quiprendlestickets = WS.url("http://www.quiprendlestickets.com/getModalites").get();
+				Promise<WS.Response> cv = WS.url("http://www.yannick-saintmartino.com/infosGenerales").get();
+			}
+		}, 0, cinqMinutes);	
+		return ok("Demarrage des appels");
+	}
 
-    public static Result getInformationsGenerales() {
+	public static Result getInformationsGenerales() {
 	return ok(Json.toJson(new InformationsGenerales()));
     }
 
