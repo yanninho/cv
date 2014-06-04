@@ -1,1 +1,1 @@
-web: target/start -Dconfig.resource=heroku.conf
+web: target/start -Dhttp.port=$PORT $JAVA_OPTS -Dconfig.resource=heroku.conf
