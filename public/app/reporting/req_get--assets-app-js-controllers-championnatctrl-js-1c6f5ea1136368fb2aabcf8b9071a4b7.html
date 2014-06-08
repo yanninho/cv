@@ -23,8 +23,8 @@
 					<div class="sous-menu">
 						<div class="item"><a href="index.html">GLOBAL</a></div>
 						<div class="item ouvert"><a id="details_link" href="#">DETAILS</a></div>
-						<p class="sim_desc" title="2014-05-10 13:11:59, duration : 147 seconds" data-content="">
-							<b>2014-05-10 13:11:59, duration : 147 seconds</b> 
+						<p class="sim_desc" title="2014-06-08 08:35:22, duration : 155 seconds" data-content="">
+							<b>2014-06-08 08:35:22, duration : 155 seconds</b> 
 						</p>
 					</div>
 					<div class="content-in">
@@ -330,7 +330,7 @@ var responseTimeChart = new Highcharts.StockChart({
 , pointInterval: 1000
 , name: 'Response Time (success)'
 , data: [
-[1399720338423,190,310]]
+[1402209343286,160,170],[1402209344286,150,160]]
 , type: 'arearange'
 , tooltip: { yDecimals: 0, ySuffix: 'ms' }
 , yAxis: 0
@@ -362,7 +362,7 @@ var responseTimeDistributionChart = new Highcharts.Chart({
 		text: 'A title to let highcharts reserve the place for the title set later'
 	},
 	xAxis: {
-		categories: ['191', '192', '193', '194', '195', '197', '198', '199', '200', '201', '203', '204', '205', '206', '207', '209', '210', '211', '212', '213', '215', '216', '217', '218', '219', '221', '222', '223', '224', '225', '227', '228', '229', '230', '231', '233', '234', '235', '236', '237', '239', '240', '241', '242', '243', '245', '246', '247', '248', '249', '251', '252', '253', '254', '255', '257', '258', '259', '260', '261', '263', '264', '265', '266', '267', '269', '270', '271', '272', '273', '275', '276', '277', '278', '279', '281', '282', '283', '284', '285', '287', '288', '289', '290', '291', '293', '294', '295', '296', '297', '299', '300', '301', '302', '303', '305', '306', '307', '308', '309'],
+		categories: ['151', '152', '153', '154', '155', '156', '157', '158', '159', '160', '161', '162', '163', '164', '165', '166', '167', '168', '169', '170'],
 		tickInterval: 20
 	},
 	yAxis: {
@@ -390,13 +390,13 @@ var responseTimeDistributionChart = new Highcharts.Chart({
 , color: '#4572A7'
 , name: 'Success'
 , data: [
-80,0,0,0,0,0,0,0,10,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,10]
+30,0,0,0,0,0,0,0,0,0,50,0,0,0,0,0,0,0,0,20]
 , tooltip: { yDecimals: 0, ySuffix: 'ms' }	},		{
 		type: 'column'
 , color: '#FF0000'
 , name: 'Failure'
 , data: [
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
 , tooltip: { yDecimals: 0, ySuffix: 'ms' }	}		]
 });
 
@@ -478,7 +478,7 @@ var latencyChart = new Highcharts.StockChart({
 , pointInterval: 1000
 , name: 'Latency (success)'
 , data: [
-[1399720338423,190,310]]
+[1402209343286,160,170],[1402209344286,150,150]]
 , type: 'arearange'
 , tooltip: { yDecimals: 0, ySuffix: 'ms' }
 , yAxis: 0
@@ -553,7 +553,7 @@ var scatterChart = new Highcharts.Chart({
 , color: 'rgba(69, 114, 167, .2)'
 , name: 'Successes'
 , data: [
-[21,310]]		}, {
+[32,160],[32,170]]		}, {
 		type: 'scatter'
 , color: 'rgba(255, 0, 0, .2)'
 , name: 'Failures'
