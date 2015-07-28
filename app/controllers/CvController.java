@@ -29,7 +29,7 @@ public class CvController  extends Controller {
 	latexcv.append("\\address{3, impasse Sicard Alaman}{31\\,500 Toulouse}{France}\n");
 	latexcv.append("\\phone[mobile]{06~10~50~45~62}\n");
 	latexcv.append("\\email{yannick.saintmartino@gmail.com}\n");
-	latexcv.append("\\homepage{www.yannick-saintmartino.com}\n");
+	//latexcv.append("\\homepage{www.yannick-saintmartino.com}\n");
 	latexcv.append("\\begin{document}\n");
 	latexcv.append("\\makecvtitle\n");
 	latexcv.append("\\section{Compétences}\n");
