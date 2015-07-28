@@ -1,3 +1,5 @@
+@charset "utf-8";
+
 @mixin table($color, $lg-color, $lg-font-color) {
 	$border : tint($color, $soixantepourcent);
 	$bgcolor : $color;
