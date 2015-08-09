@@ -1,0 +1,100 @@
+// bower:scss
+// endbower
+
+.item {
+	background-color: black;
+	opacity: 0.5;
+}
+
+html {
+  margin: 0;
+  padding: 0;
+  background: url("../images/G0110941.JPG") no-repeat fixed center center;
+}
+
+body {
+  background: transparent;
+  color: white;
+  overflow-x: hidden;
+}
+
+#title {
+	margin-bottom: 0; 
+	margin-top: 0;
+	margin-left: 20px;
+	padding-top: 10px;
+}
+
+#menu {
+	height: 200px;
+	a {
+		color: white;
+		text-decoration: none;
+	}
+	a:hover {
+		color: orange;
+	}
+	.active {
+		color: #7FE22E;
+	}
+	div {
+		@extend .item;
+		padding : 15px;
+	}
+	.first {
+		border-radius: 25px 0 0 0;
+	}
+}
+
+.view {
+	@extend .item;
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 50px;
+	top: 248px;
+	padding: 15px;
+}
+
+.view.ng-enter, .view.ng-leave {
+  -webkit-transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.5s;
+  transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.5s;
+
+  display:block;
+  position:absolute;
+  min-width: 2000px;
+}
+
+.view.ng-leave {
+	background: transparent;
+}
+
+.view.ng-enter {
+  left:100%;
+}
+
+.view.ng-enter.ng-enter-active {
+  left:0;
+}
+
+.view.ng-leave.ng-leave-active {
+  left:-100%;
+}
+
+.md-list-item-text h3,h4 {
+	color: white !important;
+}
+
+.md-list-item-text h3 {
+	text-decoration: underline;
+	font-weight: bold;
+}
+
+md-content {
+	background: transparent;
+	height: 100%;
+}
+
+md-divider {
+	border-color: white;
+}

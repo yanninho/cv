@@ -1,8 +1,2 @@
-cv version 2.2.2
+cv version 3
 ===
-
-Play! framework
-AngularJS
-HTML5
-CSS3
-SASS / Compass

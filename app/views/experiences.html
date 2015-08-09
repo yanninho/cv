@@ -1,0 +1,16 @@
+<md-content layout-padding>	
+	<section ng-repeat="(key, value) in experiences">
+		<md-list>
+		  <md-list-item class="md-3-line" ng-repeat="experience in value">
+		    <div class="md-list-item-text">
+		      <h3>{{ experience.client }} de {{ experience.begin }} à {{ experience.end }}</h3>
+		      <h4>{{ experience.poste }}</h4>
+		      <h4>{{ experience.description }}</h4>
+		      <h5 ng-repeat="task in experience.tasks">{{task}}</h5>
+		      <h6>Environnement technique : {{experience.technical}}</h6>
+		    </div>
+		    <md-divider ></md-divider>
+		  </md-list-item>
+		</md-list>
+	</section>
+</md-content>
