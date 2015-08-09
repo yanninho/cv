@@ -8,10 +8,10 @@
  * Controller of the cvApp
  */
 angular.module('cvApp')
-  .controller('ExperiencesCtrl', function ($scope, rest) {
+  .controller('ExperiencesCtrl', function ($scope, rest, URLS) {
     var promiseGet = rest.call({
     	method: 'GET',
-    	url: 'http://localhost:9001/v1/cv?fields=experience'
+    	url: URLS.urlBackend + '/v1/cv?fields=experience'
     });
     promiseGet.then(function(result) {
     	$scope.experiences = result.data[0].experience;

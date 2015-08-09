@@ -8,10 +8,10 @@
  * Controller of the cvApp
  */
 angular.module('cvApp')
-  .controller('FormationCtrl', function ($scope, rest) {
+  .controller('FormationCtrl', function ($scope, rest, URLS) {
     var promiseGet = rest.call({
     	method: 'GET',
-    	url: 'http://localhost:9001/v1/cv?fields=formation'
+    	url: URLS.urlBackend + '/v1/cv?fields=formation'
     });
     promiseGet.then(function(result) {
     	$scope.formation = result.data[0].formation;

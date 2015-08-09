@@ -9,15 +9,14 @@
 
 module.exports = function (grunt) {
 
+  // Load grunt tasks automatically
+  require('load-grunt-tasks')(grunt);
+
   // Time how long tasks take. Can help when optimizing build times
   require('time-grunt')(grunt);
 
-  // Automatically load required Grunt tasks
-  require('jit-grunt')(grunt, {
-    useminPrepare: 'grunt-usemin',
-    ngtemplates: 'grunt-angular-templates',
-    cdnify: 'grunt-google-cdn'
-  });
+  // Time how long tasks take. Can help when optimizing build times
+  require('time-grunt')(grunt);
 
   // Configurable paths for the application
   var appConfig = {
@@ -396,7 +395,8 @@ module.exports = function (grunt) {
             '.htaccess',
             '*.html',
             'images/{,*/}*.{webp}',
-            'styles/fonts/{,*/}*.*'
+            'styles/fonts/{,*/}*.*',
+            'files/*'
           ]
         }, {
           expand: true,
@@ -469,7 +469,7 @@ module.exports = function (grunt) {
 
     grunt.task.run([
       'clean:server',
-      //'ngconstant:development',
+      'ngconstant:development',
       'wiredep',
       'concurrent:server',
       'autoprefixer:server',
@@ -485,7 +485,7 @@ module.exports = function (grunt) {
 
   grunt.registerTask('test', [
     'clean:server',
-    //'ngconstant:test',
+    'ngconstant:test',
     'wiredep',
     'concurrent:test',
     'autoprefixer',
@@ -495,7 +495,7 @@ module.exports = function (grunt) {
 
   grunt.registerTask('build', [
     'clean:dist',
-    //'ngconstant:production',
+    'ngconstant:production',
     'wiredep',
     'useminPrepare',
     'concurrent:dist',

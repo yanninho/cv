@@ -23,9 +23,13 @@
         <span>Yannick Saint Martino</span>
     </h1>
 
+    <!-- <md-button class="md-fab md-mini bt-dl-cv md-warn" aria-label="Mini FAB">
+        <md-icon md-svg-src="images/ic_file_download_48px.svg"></md-icon>    
+    </md-button> -->
+
     <div id="menu" layout="row" layout-align="end end" ng-controller="ToolbarCtrl">
       <div class="first">/*</div>
-      <div><a ng-click="menu='accueil' " ng-class="{active:menu=='accueil'}" href="#/">Accueil</a></div>
+      <div><a ng-click="menu='accueil' " href="#/"><md-icon md-svg-src="images/ic_home_48px.svg" class="icon-home" ng-class="{active:menu=='accueil'}"></md-icon></a></div>
       <div><a ng-click="menu='cmpt' " ng-class="{active:menu=='cmpt'}" href="#/competences">Compétences</a></div>
       <div><a ng-click="menu='exp' " ng-class="{active:menu=='exp'}" href="#/experiences">Expériences</a></div>
       <div><a ng-click="menu='form' " ng-class="{active:menu=='form'}" href="#/formation">Formations</a></div>

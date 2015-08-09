@@ -1,10 +1,10 @@
 {
 	"URLS": {
       "DEVELOPMENT": {
-        "urlBackend" : "http://127.0.0.1:8000"
+        "urlBackend" : "http://127.0.0.1:9001"
       },
       "TEST": {
-        "urlBackend" : "http://localhost:8000"
+        "urlBackend" : "http://localhost:9001"
       },
       "PRODUCTION": {
         "urlBackend" : "http://cv-backend.herokuapp.com"
