@@ -44,7 +44,6 @@ angular
       .otherwise({
         redirectTo: '/'
       });
-      $locationProvider.html5Mode(true);
   })
   .config(function($mdThemingProvider) {
     $mdThemingProvider.theme('blue');

@@ -14,9 +14,9 @@ angular.module('cvApp')
     $scope.menuMax =  3;
     $scope.routes = [
       '/',
-      '/competences',
-      '/experiences',
-      '/formation'
+      '#/competences',
+      '#/experiences',
+      '#/formation'
     ];
  	
     $scope.getSlideDir = function() {
