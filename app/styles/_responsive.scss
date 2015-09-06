@@ -1,0 +1,24 @@
+/* Landscape phone to portrait tablet */
+@media (max-width: 767px) { 
+	html {
+		background: #3B577F url("../images/G0110941_mobile.JPG") no-repeat fixed center center;
+	}
+
+	h1 {
+		font-size: 14px;
+	}
+
+	#menu-large {
+		display: none;
+		visibility: hidden;		
+	}
+
+ }
+
+/* large screen */
+@media (min-width: 767px) { 
+	#menu-phone {
+		display: none;
+		visibility: hidden;
+	}
+} 

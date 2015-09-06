@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>Yannick Saint Martino</title>
+    <base href="/"></base>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
@@ -12,10 +13,10 @@
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
-    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/main.css" />
     <!-- endbuild -->
   </head>
-  <body ng-app="cvApp">
+  <body ng-app="cvApp" ng-controller="AppCtrl">
     <!--[if lte IE 8]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
@@ -27,16 +28,26 @@
         <md-icon md-svg-src="images/ic_file_download_48px.svg"></md-icon>    
     </md-button> -->
 
-    <div id="menu" layout="row" layout-align="end end" ng-controller="ToolbarCtrl">
+    <div id="menu-phone">
+            <a ng-click="menuAccueil()" href="/"> 
+                <md-icon md-svg-src="images/ic_home_48px.svg" class="first icon-home s48">
+                </md-icon>
+            </a>
+            <md-icon md-svg-src="images/ic_chevron_right_48px.svg" class="icon-home s48" ng-click="menuToLeft()">
+            </md-icon>       
+    </div>
+    
+    <div id="menu-large" layout="row" layout-align="end end" ng-controller="ToolbarCtrl">
       <div class="first">/*</div>
-      <div><a ng-click="menu='accueil' " href="#/"><md-icon md-svg-src="images/ic_home_48px.svg" class="icon-home" ng-class="{active:menu=='accueil'}"></md-icon></a></div>
-      <div><a ng-click="menu='cmpt' " ng-class="{active:menu=='cmpt'}" href="#/competences">Compétences</a></div>
-      <div><a ng-click="menu='exp' " ng-class="{active:menu=='exp'}" href="#/experiences">Expériences</a></div>
-      <div><a ng-click="menu='form' " ng-class="{active:menu=='form'}" href="#/formation">Formations</a></div>
+      <div><a ng-click="menu=0" href="/"><md-icon md-svg-src="images/ic_home_48px.svg" class="icon-home" ng-class="{active:menu==0}"></md-icon></a></div>
+      <div><a ng-click="menu=1" ng-class="{active:menu==1}" href="/competences">Compétences</a></div>
+      <div><a ng-click="menu=2" ng-class="{active:menu==2}" href="/experiences">Expériences</a></div>
+      <div><a ng-click="menu=3" ng-class="{active:menu==3}" href="/formation">Formations</a></div>
       <div>*/</div>
     </div>
 
-    <div class="view" ng-view="">
+
+    <div class="view" ng-view ng-class="getSlideDir()"> 
         
     </div>
 
@@ -45,11 +56,12 @@
     <script src="bower_components/angular/angular.js"></script>
     <script src="bower_components/angular-animate/angular-animate.js"></script>
     <script src="bower_components/angular-aria/angular-aria.js"></script>
+    <script src="bower_components/angular-material/angular-material.js"></script>
     <script src="bower_components/angular-resource/angular-resource.js"></script>
     <script src="bower_components/angular-route/angular-route.js"></script>
     <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
     <script src="bower_components/angular-touch/angular-touch.js"></script>
-    <script src="bower_components/angular-material/angular-material.js"></script>
+    <script src="bower_components/happyrestangular/lib/happyRestAngular.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
@@ -59,9 +71,10 @@
         <script src="scripts/controllers/toolbar.js"></script>
         <script src="scripts/controllers/competences.js"></script>
         <script src="scripts/controllers/experiences.js"></script>
-        <script src="scripts/services/rest.js"></script>
+        
         <script src="scripts/services/config.service.js"></script>
         <script src="scripts/controllers/formation.js"></script>
+        <script src="scripts/controllers/app.js"></script>
         <!-- endbuild -->
 </body>
 </html>

@@ -8,6 +8,6 @@
  * Controller of the cvApp
  */
 angular.module('cvApp')
-  .controller('ToolbarCtrl', function ($scope) {
-    $scope.menu='accueil';
+  .controller('ToolbarCtrl', function ($scope, $location) {
+
   });
